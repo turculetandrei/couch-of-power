@@ -44,3 +44,8 @@ next-env.d.ts
 .vercel
 .env*
 !.env.example
+
+# AI agent skills installed by integrations (not part of the app)
+.agents/
+.claude/
+skills-lock.json

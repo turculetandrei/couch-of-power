@@ -81,7 +81,7 @@ export default function Tutorial() {
         }
       />
 
-      <div className="grid flex-1 gap-4 md:grid-cols-[minmax(0,1fr)_380px] md:items-center md:gap-10">
+      <div className="grid flex-1 gap-4 md:mx-auto md:w-full md:max-w-xl lg:max-w-none lg:grid-cols-[minmax(0,1fr)_380px] lg:items-center lg:gap-10">
         <RoomTable
           seats={shown.seats}
           couchSize={4}
@@ -160,7 +160,7 @@ export default function Tutorial() {
             </div>
           )}
 
-          <div className="mt-auto flex gap-2 pt-2 md:mt-4">
+          <div className="mt-auto flex gap-2 pt-2 lg:mt-4">
             {step > 0 && (
               <Button variant="line" size="lg" onClick={() => go(step - 1)}>
                 {t.back}

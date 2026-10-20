@@ -1,5 +1,7 @@
 # Couch of Power
 
+**Live:** https://couch-of-power.vercel.app
+
 A mobile-first web app for the party game **Couch of Power** (also known as "Four on the Couch" or "Parliament").
 
 - **Doar împărțire nume** (`/local`): one phone, everyone in the same room. Enter names, split the teams, deal secret slips pass-the-phone style, and get a suggested seating plan and a turn timer. Works offline and has no accounts.
@@ -42,7 +44,7 @@ Each tab must be a *different player*, and players are remembered in `localStora
 
 ## Supabase setup (production)
 
-1. Create a free Supabase project. Either use the Vercel integration (`vercel integration add supabase`), which injects the env vars automatically, or go to supabase.com → New project.
+1. Create a free Supabase project. Either use the Vercel integration (`vercel integration add supabase`), which injects the env vars automatically (that is how the live site is set up), or go to supabase.com → New project. Locally, `vercel env pull .env.local` brings the same vars down.
 2. In the SQL editor, run [`supabase/migrations/0001_rooms.sql`](supabase/migrations/0001_rooms.sql). It creates the `rooms` table with RLS **on and no policies**, so the public key can't read it.
 3. Realtime needs no setup. The server sends broadcast pings over the REST API, and clients subscribe to the public channel `room:CODE`.
 4. Set the env vars (see `.env.example`):
